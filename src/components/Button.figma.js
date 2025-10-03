@@ -5,50 +5,40 @@
 
 import { figma } from "@figma/code-connect";
 
-// Button Component Code Connect mapping
-figma.connect("https://github.com/josscuette/alize/blob/main/src/components/Button.js", {
-  // Primary Button (Node ID: 1609:1235)
-  figmaNodeUrl: "https://www.figma.com/design/f6Q26RRDgYcHrJkpdSqStm/Aliz%C3%A9-Tailwind-Test?node-id=1609-1235",
-  
+// Button Component - Primary variant
+figma.connect("1609:1235", {
+  source: "https://github.com/josscuette/alize/blob/main/src/components/Button.js",
+  component: "Button",
+  variant: {
+    "Hierarchy": "Primary"
+  },
   props: {
-    hierarchy: figma.enum("Hierarchy", {
-      Primary: "primary",
-      Secondary: "secondary"
-    }),
     text: figma.string("Button")
   },
-  
-  example: ({ hierarchy, text }) => `
-    // Button Component from GitHub
-    const button = createButton('#my-button', {
-      hierarchy: '${hierarchy}',
-      text: '${text}',
-      onClick: () => console.log('Button clicked!')
-    });
-  `
+  example: ({ text }) => `
+// Button Component from GitHub
+const button = createButton('#my-button', {
+  hierarchy: 'primary',
+  text: '${text}',
+  onClick: () => console.log('Primary button clicked!')
+});`
 });
 
-// Secondary Button mapping
-figma.connect("https://github.com/josscuette/alize/blob/main/src/components/Button.js", {
-  // Secondary Button (Node ID: 1609:1240) 
-  figmaNodeUrl: "https://www.figma.com/design/f6Q26RRDgYcHrJkpdSqStm/Aliz%C3%A9-Tailwind-Test?node-id=1609-1240",
-  
+// Button Component - Secondary variant  
+figma.connect("1609:1240", {
+  source: "https://github.com/josscuette/alize/blob/main/src/components/Button.js", 
+  component: "Button",
+  variant: {
+    "Hierarchy": "Secondary"
+  },
   props: {
-    hierarchy: figma.enum("Hierarchy", {
-      Primary: "primary", 
-      Secondary: "secondary"
-    }),
     text: figma.string("Button")
   },
-  
-  example: ({ hierarchy, text }) => `
-    // Button Component from GitHub
-    const button = createButton('#my-button', {
-      hierarchy: '${hierarchy}',
-      text: '${text}',
-      onClick: () => console.log('Button clicked!')
-    });
-  `
+  example: ({ text }) => `
+// Button Component from GitHub
+const button = createButton('#my-button', {
+  hierarchy: 'secondary', 
+  text: '${text}',
+  onClick: () => console.log('Secondary button clicked!')
+});`
 });
-
-export default "https://github.com/josscuette/alize/blob/main/src/components/Button.js";

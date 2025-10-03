@@ -15,7 +15,9 @@
     "dev": "tailwindcss -i src/input.css -o build/output.css --watch",
     "build": "tailwindcss -i src/input.css -o build/output.css",
     "serve": "python3 -m http.server 8000",
-    "figma-tokens": "node extract-hex-tokens.js"
+    "figma-tokens": "node extract-hex-tokens.js",
+    "code-connect": "figma connect publish",
+    "code-connect:dev": "figma connect publish --dev"
   },
   "keywords": [
     "design-system",
