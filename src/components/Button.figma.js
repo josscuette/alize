@@ -1,56 +1,54 @@
 /**
- * Code Connect configuration for Button component
- * This file connects the Figma Button component to our code implementation
+ * Code Connect configuration for Button Component
+ * GitHub Source: https://github.com/josscuette/alize/blob/main/src/components/Button.js
  */
 
-import { figma } from '@figma/code-connect';
+import { figma } from "@figma/code-connect";
 
-// Configuration Code Connect pour le composant Button
-figma.connect({
-  // URL ou node ID du composant dans Figma
-  figmaNodeUrl: 'https://www.figma.com/design/YOUR_FILE_KEY/YOUR_FILE_NAME?node-id=1609-1241',
+// Button Component Code Connect mapping
+figma.connect("https://github.com/josscuette/alize/blob/main/src/components/Button.js", {
+  // Primary Button (Node ID: 1609:1235)
+  figmaNodeUrl: "https://www.figma.com/design/f6Q26RRDgYcHrJkpdSqStm/Aliz%C3%A9-Tailwind-Test?node-id=1609-1235",
   
-  // Chemin vers le composant dans le code
-  source: './src/components/Button.js',
-  
-  // Nom du composant
-  component: 'Button',
-  
-  // Mapping des propriétés Figma vers les props du composant
   props: {
-    hierarchy: figma.enum('Hierarchy', {
-      'Primary': 'primary',
-      'Secondary': 'secondary'
+    hierarchy: figma.enum("Hierarchy", {
+      Primary: "primary",
+      Secondary: "secondary"
     }),
-    text: figma.string('Button Text', 'Button')
+    text: figma.string("Button")
   },
   
-  // Template de rendu - comment utiliser le composant
-  render: ({ hierarchy, text }) => `
-    <div id="button-container"></div>
-    <script>
-      createButton('#button-container', {
-        hierarchy: '${hierarchy}',
-        text: '${text}',
-        onClick: () => console.log('Button clicked: ${text}')
-      });
-    </script>
+  example: ({ hierarchy, text }) => `
+    // Button Component from GitHub
+    const button = createButton('#my-button', {
+      hierarchy: '${hierarchy}',
+      text: '${text}',
+      onClick: () => console.log('Button clicked!')
+    });
   `
 });
 
-// Export de la configuration pour référence
-export const buttonCodeConnect = {
-  figmaNodeId: '1609:1241',
-  componentName: 'Button',
-  variants: {
-    primary: {
-      hierarchy: 'primary',
-      classes: 'bg-slate-500 hover:bg-slate-600 active:bg-slate-700 text-white'
-    },
-    secondary: {
-      hierarchy: 'secondary', 
-      classes: 'bg-slate-200 hover:bg-slate-300 active:bg-slate-400 text-slate-700'
-    }
+// Secondary Button mapping
+figma.connect("https://github.com/josscuette/alize/blob/main/src/components/Button.js", {
+  // Secondary Button (Node ID: 1609:1240) 
+  figmaNodeUrl: "https://www.figma.com/design/f6Q26RRDgYcHrJkpdSqStm/Aliz%C3%A9-Tailwind-Test?node-id=1609-1240",
+  
+  props: {
+    hierarchy: figma.enum("Hierarchy", {
+      Primary: "primary", 
+      Secondary: "secondary"
+    }),
+    text: figma.string("Button")
   },
-  baseClasses: 'flex gap-2 items-center justify-center px-4 py-1.5 rounded-lg transition-all duration-200 font-source font-normal text-sm leading-5 font-smooth cursor-pointer select-none'
-};
+  
+  example: ({ hierarchy, text }) => `
+    // Button Component from GitHub
+    const button = createButton('#my-button', {
+      hierarchy: '${hierarchy}',
+      text: '${text}',
+      onClick: () => console.log('Button clicked!')
+    });
+  `
+});
+
+export default "https://github.com/josscuette/alize/blob/main/src/components/Button.js";

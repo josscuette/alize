@@ -1,30 +1,41 @@
 /**
  * Code Connect configuration for Card Component
- * Maps Figma Card component (1609:1258) to Card.js
+ * GitHub Source: https://github.com/josscuette/alize/blob/main/src/components/Card.js
  */
 
 import { figma } from "@figma/code-connect";
-import { Card } from "./Card.js";
 
-// Main Card component mapping
-figma.connect(Card, "https://www.figma.com/design/FILE_KEY/FILE_NAME?node-id=1609-1258", {
+// Card Component Code Connect mapping
+figma.connect("https://github.com/josscuette/alize/blob/main/src/components/Card.js", {
+  // Card Component (Node ID: 1609:1258)
+  figmaNodeUrl: "https://www.figma.com/design/f6Q26RRDgYcHrJkpdSqStm/Aliz%C3%A9-Tailwind-Test?node-id=1609-1258",
+  
   props: {
-    title: figma.string("Text Container > Price"),
-    description: figma.string("Text Container > Fix a price for your services"),  
-    price: figma.string("Price Container > $45.00"),
-    primaryButtonText: figma.string("Button Container > Button[Primary]"),
-    secondaryButtonText: figma.string("Button Container > Button[Secondary]"),
+    title: figma.string("Price"),
+    description: figma.string("Fix a price for your services"),
+    price: figma.string("$45.00"),
+    deadlineTitle: figma.string("Deadline"),
+    deadlineDescription: figma.string("When we deliver"),
+    deadlineValue: figma.string("December 2025"),
+    primaryButtonText: figma.string("Subscribe"),
+    secondaryButtonText: figma.string("Cancel")
   },
-  example: (props) => (
-    <Card 
-      title={props.title}
-      description={props.description}
-      price={props.price}
-      primaryButtonText={props.primaryButtonText}
-      secondaryButtonText={props.secondaryButtonText}
-    />
-  ),
+  
+  example: ({ title, description, price, deadlineTitle, deadlineDescription, deadlineValue, primaryButtonText, secondaryButtonText }) => `
+    // Card Component from GitHub
+    const card = createCard('#my-card', {
+      title: '${title}',
+      description: '${description}',
+      price: '${price}',
+      deadlineTitle: '${deadlineTitle}',
+      deadlineDescription: '${deadlineDescription}',
+      deadlineValue: '${deadlineValue}',
+      primaryButtonText: '${primaryButtonText}',
+      secondaryButtonText: '${secondaryButtonText}',
+      onPrimaryClick: () => console.log('Primary clicked!'),
+      onSecondaryClick: () => console.log('Secondary clicked!')
+    });
+  `
 });
 
-// Export for Code Connect
-export { Card };
+export default "https://github.com/josscuette/alize/blob/main/src/components/Card.js";
