@@ -1,0 +1,35 @@
+{
+  "name": "alize-design-system",
+  "version": "1.0.0",
+  "description": "Un design system vanilla moderne avec Tailwind CSS v4, synchronisé avec Figma via Code Connect et MCP",
+  "main": "src/components/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/josscuette/alize.git"
+  },
+  "homepage": "https://github.com/josscuette/alize",
+  "bugs": {
+    "url": "https://github.com/josscuette/alize/issues"
+  },
+  "scripts": {
+    "dev": "tailwindcss -i src/input.css -o build/output.css --watch",
+    "build": "tailwindcss -i src/input.css -o build/output.css",
+    "serve": "python3 -m http.server 8000",
+    "figma-tokens": "node extract-hex-tokens.js"
+  },
+  "keywords": [
+    "design-system",
+    "tailwind",
+    "css",
+    "vanilla",
+    "figma",
+    "code-connect",
+    "mcp",
+    "components"
+  ],
+  "author": "Josselin Cuette <josselin@example.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^4.0.0-alpha.25"
+  }
+}

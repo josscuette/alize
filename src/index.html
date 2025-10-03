@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alizé - Tailwind CSS v4</title>
+    <!-- Google Fonts - Source Sans Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../build/output.css">
+    <!-- Button Component -->
+    <script src="components/Button.js"></script>
+    <script src="components/Card.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <header class="text-center mb-12">
+                <h1 class="text-5xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+                    Alizé
+                </h1>
+                
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Projet Tailwind CSS v4 - Prêt pour le développement
+                </p>
+                
+                <!-- Bouton importé depuis Figma -->
+                <div class="flex justify-center mt-6">
+                    <button class="bg-slate-500 hover:bg-slate-600 active:bg-slate-700 flex gap-2 items-center justify-center px-4 py-1.5 rounded-lg transition-colors duration-200 font-smooth">
+                        <span class="font-source font-normal text-sm text-white whitespace-nowrap leading-5">
+                            Button
+                        </span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <main class="space-y-12">
+                <!-- Welcome Section -->
+                <section class="bg-white rounded-2xl shadow-lg p-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Bienvenue</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Votre environnement Tailwind CSS v4 est configuré et prêt à l'emploi. 
+                        Toutes les couleurs, espacements et utilitaires sont disponibles.
+                    </p>
+                </section>
+
+                <!-- Font Demo Section -->
+                <section class="bg-white rounded-2xl shadow-lg p-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Démonstration Source Sans Pro</h2>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <p class="text-sm text-gray-500 mb-2">Font par défaut (maintenant Source Sans Pro avec antialiasing) :</p>
+                            <p class="text-lg">Ce texte utilise la font par défaut avec font-smoothing</p>
+                        </div>
+                        <div class="p-4 bg-green-50 rounded-lg">
+                            <p class="text-sm text-gray-500 mb-2">Différents poids avec font-smoothing :</p>
+                            <div class="space-y-2">
+                                <p class="font-source font-extralight font-smooth text-base">Extra Light (200) + antialiasing</p>
+                                <p class="font-source font-light font-smooth text-base">Light (300) + antialiasing</p>
+                                <p class="font-source font-normal font-smooth text-base">Regular (400) + antialiasing</p>
+                                <p class="font-source font-semibold font-smooth text-base">Semi Bold (600) + antialiasing</p>
+                                <p class="font-source font-bold font-smooth text-base">Bold (700) + antialiasing</p>
+                                <p class="font-source font-black font-smooth text-base">Black (900) + antialiasing</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Button Component Demo -->
+                <section class="bg-white rounded-2xl shadow-lg p-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Composant Button - Code Connect</h2>
+                    <div class="space-y-6">
+                        <!-- Variantes du composant -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <h3 class="text-lg font-semibold text-gray-700 mb-4">Primary Button</h3>
+                                <div id="primary-button" class="flex justify-center"></div>
+                                <code class="text-xs text-gray-500 mt-2 block">hierarchy: 'primary'</code>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <h3 class="text-lg font-semibold text-gray-700 mb-4">Secondary Button</h3>
+                                <div id="secondary-button" class="flex justify-center"></div>
+                                <code class="text-xs text-gray-500 mt-2 block">hierarchy: 'secondary'</code>
+                            </div>
+                        </div>
+
+                        <!-- Contrôles interactifs -->
+                        <div class="p-4 bg-white rounded-lg">
+                            <h3 class="text-lg font-semibold text-gray-700 mb-4">Contrôles interactifs</h3>
+                            <div class="space-y-4">
+                                <div class="flex gap-4 items-center">
+                                    <label class="text-sm font-medium text-gray-700">Variante :</label>
+                                    <select id="hierarchy-select" class="px-3 py-1 border border-gray-300 rounded text-sm">
+                                        <option value="primary">Primary</option>
+                                        <option value="secondary">Secondary</option>
+                                    </select>
+                                </div>
+                                <div class="flex gap-4 items-center">
+                                    <label class="text-sm font-medium text-gray-700">Texte :</label>
+                                    <input id="text-input" type="text" value="Button" class="px-3 py-1 border border-gray-300 rounded text-sm">
+                                </div>
+                                <div id="interactive-button" class="flex justify-center"></div>
+                            </div>
+                        </div>
+
+                        <!-- Code Connect Info -->
+                        <div class="p-4 bg-green-50 border border-green-200 rounded-lg">
+                            <h3 class="text-lg font-semibold text-green-800 mb-2">🔗 Code Connect configuré</h3>
+                            <p class="text-green-700 text-sm mb-2">
+                                Ce composant est connecté à Figma via Code Connect. 
+                                Node ID: <code class="bg-green-100 px-1 rounded">1609:1241</code>
+                            </p>
+                            <div class="text-xs text-green-600 space-y-1">
+                                <p>✅ Variantes : Primary, Secondary</p>
+                                <p>✅ Props : hierarchy, text, onClick</p>
+                                <p>✅ Classes Tailwind synchronisées</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Card Component Test -->
+                <section class="bg-white rounded-2xl shadow-lg p-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Card Component - Original Figma</h2>
+                    
+                    <!-- Single Original Card -->
+                    <div class="flex justify-center">
+                        <div class="w-[360px]">
+                            <div id="original-figma-card"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Actions -->
+                <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <div class="w-6 h-6 bg-blue-500 rounded"></div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Design System</h3>
+                        <p class="text-gray-600 text-sm">Couleurs et tokens synchronisés avec Figma</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                            <div class="w-6 h-6 bg-green-500 rounded"></div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Développement</h3>
+                        <p class="text-gray-600 text-sm">Environnement prêt avec hot-reload</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                            <div class="w-6 h-6 bg-purple-500 rounded"></div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Intégration</h3>
+                        <p class="text-gray-600 text-sm">Tokens Figma et CSS synchronisés</p>
+                    </div>
+                </section>
+
+                <!-- Status -->
+                <section class="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-2xl p-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <h3 class="text-lg font-semibold text-green-800">Système opérationnel</h3>
+                    </div>
+                    <p class="text-green-700 mt-2 text-sm">
+                        ✅ Tailwind CSS v4 configuré<br>
+                        ✅ Toutes les couleurs disponibles<br>
+                        ✅ Tokens Figma synchronisés<br>
+                        ✅ Hot-reload activé
+                    </p>
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer class="text-center mt-16 text-gray-500 text-sm">
+                <p>Alizé • Tailwind CSS v4 • Prêt pour le développement</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Initialisation des composants après le chargement de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Boutons de démonstration
+            const primaryButton = createButton('#primary-button', {
+                hierarchy: 'primary',
+                text: 'Primary Button',
+                onClick: () => alert('Primary button clicked!')
+            });
+
+            const secondaryButton = createButton('#secondary-button', {
+                hierarchy: 'secondary', 
+                text: 'Secondary Button',
+                onClick: () => alert('Secondary button clicked!')
+            });
+
+            // Bouton interactif avec contrôles
+            let interactiveButton = createButton('#interactive-button', {
+                hierarchy: 'primary',
+                text: 'Button',
+                onClick: () => alert('Interactive button clicked!')
+            });
+
+            // Contrôles interactifs
+            const hierarchySelect = document.getElementById('hierarchy-select');
+            const textInput = document.getElementById('text-input');
+
+            hierarchySelect.addEventListener('change', function() {
+                interactiveButton.setHierarchy(this.value);
+            });
+
+            textInput.addEventListener('input', function() {
+                interactiveButton.setText(this.value);
+            });
+
+            // Original Figma Card (exact replica)
+            const originalCard = createCard('#original-figma-card', {
+                title: 'Price',
+                description: 'Fix a price for your services',
+                price: '$45.00',
+                deadlineTitle: 'Deadline',
+                deadlineDescription: 'When we deliver',
+                deadlineValue: 'December 2025',
+                primaryButtonText: 'Subscribe',
+                secondaryButtonText: 'Cancel',
+                onPrimaryClick: () => alert('Subscribe clicked!'),
+                onSecondaryClick: () => alert('Cancel clicked!')
+            });
+        });
+    </script>
+</body>
+</html>
